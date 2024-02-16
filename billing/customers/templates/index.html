@@ -1,0 +1,37 @@
+<!-- billing/templates/billing/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Broadband Billing System</title>
+</head>
+<body>
+    <h1>Customer List</h1>
+    <ul>
+        {% for customer in customers %}
+            <li>{{ customer.name }} - {{ customer.email_id }}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Service List</h1>
+    <ul>
+        {% for service in services %}
+            <li>{{ service.service_type }} - {{ service.price }}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Invoice List</h1>
+    <ul>
+        {% for invoice in invoices %}
+            <li>Invoice {{ invoice.invoice_id }} - Total Amount: {{ invoice.total_amt }}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Payment List</h1>
+    <ul>
+        {% for payment in payments %}
+            <li>Payment {{ payment.payment_id }} - Amount: {{ payment.amount }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
